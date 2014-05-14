@@ -1,3 +1,28 @@
+Professors:
+  - pfirst_name: string
+  - plast_name: string
+  - gender: boolean
+  - photo_url: string
+
+Classes:
+  - dept: string
+  - class_no: integer
+  - class_name: string
+
+Rating:
+  - class_id: integer
+  - professor_id: integer
+  - quarter: string
+  - rating: integer
+  - feedback: text
+
+Student:
+  - first_name: string
+  - last_name: string
+  - graduation_year: integer
+
+
+
 # Example table for a typical Book model.
 #
 # Book:

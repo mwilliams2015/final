@@ -1,7 +1,17 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Professors.delete/all
+Professors.create("pfirst_name" => "Russell ", "plast_name" => "Walker", "gender" => "M", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/walker_r.ashx")
+Professors.create("pfirst_name" => "Jeff", "plast_name" => "Cohen", "gender" => "M", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/Cohen_Jeff.ashx")
+Professors.create("pfirst_name" => "David", "plast_name" => "Schoanthal", "gender" => "M", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/Schonthal_David.ashx")
+Professors.create("pfirst_name" => "Tim", "plast_name" => "Calkins", "gender" => "M", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/calkins_tim.ashx")
+Professors.create("pfirst_name" => "Navin", "plast_name" => "Chopra", "gender" => "M", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/Chopra_Navin.ashx")
+Professors.create("pfirst_name" => "Mark", "plast_name" => "Finn", "gender" => "M", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/finn_m.ashx")
+Professors.create("pfirst_name" => "Jen", "plast_name" => "Brown", "gender" => "F", "photo_url" => "http://www.kellogg.northwestern.edu/faculty/brown_j/htm/brownresearch_files/image002.png")
+Professors.create("pfirst_name" => "James", "plast_name" => "Naughton", "gender" => "M", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/Naughton_James.ashx")
+Professors.create("pfirst_name" => "Craig", "plast_name" => "Furfine", "gender" => "M", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/furfine_c.ashx")
+Professors.create("pfirst_name" => "Chirag", "plast_name" => "Saraiya", "gender" => "M", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/saraiya_c.ashx")
+Professors.create("pfirst_name" => "Phillip", "plast_name" => "Braun", "gender" => "M", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/braun_phillip.ashx")
+Professors.create("pfirst_name" => "David", "plast_name" => "Dranove", "gender" => "M", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/dranove_david.ashx")
+Professors.create("pfirst_name" => "Brian", "plast_name" => "Uzzi", "gender" => "M", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/uzzi_brian_2012.ashx")
+Professors.create("pfirst_name" => "Craig", "plast_name" => "Garthwaite", "gender" => "M", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/Garthwaite_Craig_2011.ashx")
+Professors.create("pfirst_name" => "Edward F.X.", "plast_name" => "Hughes", "gender" => "M", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/Hughes_Edward13_RGB.ashx")
+
