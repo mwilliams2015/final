@@ -11,3 +11,13 @@
  *= require_self
  *= require_tree .
  */
+
+.header {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+}
+
+.aside { margin-top: 36px; }
+.movie { margin-bottom: 36px; }
+
+img { margin: 10px }

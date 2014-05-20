@@ -1,1 +1,30 @@
-Hi
+<% professor_id = params["id"] %>
+<% professor = Professors.read(professor_id) %>
+
+<div class="row">
+
+  <div class="col-md-3">
+    <%= image_tag(professor["photo_url"]) %>
+  </div>
+
+<div class="col-md-9">
+    <h1><%= professor["pfirst_name"] %> <%= professor["plast_name"] %>
+      <p><small>Gender: <%= professor["gender"] %></small></p>
+    </h1>
+    </div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3>Courses Taught:</h3>
+
+<% links = Link.where("prof_id" => professor["id"]) %>
+
+    <ul>
+      <% links.each do |link| %>
+        <% classes = Classes.find_by("id" => link["class_id"]) %>
+        <li>
+          <%= link_to classes["class_name"], "/classes/#{classes["id"]}" %>
+
+        </li>
+      <% end %>
+    </ul>

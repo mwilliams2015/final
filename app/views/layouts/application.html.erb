@@ -2,11 +2,36 @@
 <html>
 <head>
   <title>Final</title>
+
+  <%= stylesheet_link_tag    "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div class="container">
+      <div class="header">
+        <div class="row">
+          <div class="col-md-12">
+            <h1> <%= image_tag "http://msfhq.com/wp-content/uploads/2013/02/Northwestern-University-Kellogg-School-of-Management-Logo.jpg", "height" => 70 %> Rate Your Professor</h1>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-8">
+            <%= link_to "Professors", "/professors", "class" => "item-link"  %> |
+            <%= link_to "Classes", "/classes" %>
+            </div>
+          <div class="pull-right">
+            <%= link_to "Sign Up", '#' %> |
+            <%= link_to "Sign In", '#' %> |
+            <%= link_to "My Profile", '#' %> |
+            <%= link_to "Sign Out", '#' %>
+          </div>
+        </div>
+        <hr>
+      </div>
 
 <%= yield %>
 

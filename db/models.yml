@@ -9,6 +9,10 @@ Classes:
   - class_no: integer
   - class_name: string
 
+Link:
+  - prof_id: string
+  - class_id: string
+
 Rating:
   - class_id: integer
   - professor_id: integer
@@ -17,8 +21,9 @@ Rating:
   - feedback: text
 
 Student:
-  - first_name: string
-  - last_name: string
+  - username: string
+  - password: string
+  - name: string
   - graduation_year: integer
 
 

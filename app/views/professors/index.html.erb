@@ -1,1 +1,26 @@
-Hi
+<div class="row">
+  <div class="col-md-2 col-md-offset-10">
+    <%= link_to "Add a New Professor", "/professors/new", "class" => 'btn btn-lg btn-primary' %>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col-md-8">
+
+    <% Professors.read.order("plast_name asc").each do |professor| %>
+
+      <div class="row professor">
+
+        <div class="col-md-4">
+          <%= link_to image_tag(professor["photo_url"], "height" => 250, "width" => 200), "/professors/#{professor["id"]}" %>
+        </div>
+
+        <div class="col-md-8">
+          <h3> <%= link_to professor["plast_name"], "/professors/#{professor["id"]}" %> </h3>
+        </div>
+      </div>
+    </div>
+</div>
+
+<% end %>
