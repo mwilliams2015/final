@@ -1,1 +1,20 @@
-Test
+<div class="row">
+  <div class="col-md-2 col-md-offset-10">
+    <%= link_to "Add a New Class", "/classes/new", "class" => 'btn btn-lg btn-primary' %>
+  </div>
+</div>
+
+
+
+
+
+<% Classes.read.order("dept asc, class_no asc").each do |classe| %>
+<ul>
+   <div class="row classe">
+   <div class="col-md-12">
+
+   <li> <h5> <%= classe["dept"] %> <%= classe["class_no"] %> <%= link_to classe["class_name"], "/classes/#{classe["id"]}" %> </h5> </li>
+
+</ul>
+
+<% end %>

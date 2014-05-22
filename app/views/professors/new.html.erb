@@ -1,0 +1,48 @@
+<div class="page-header">
+  <h1>Add a New Professor</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-5">
+
+    <%= form_tag "/professors", "method" => "post"  %>
+
+
+      <div class="form-group">
+        <%= label_tag "pfirst_name", "What is the first name of the professor?" %>
+        <%= text_field_tag "pfirst_name", "", "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "plast_name", "What is the last name of the professor?" %>
+        <%= text_field_tag "plast_name", "", "class" => "form-control" %>
+      </div>
+
+<div class="form-group">
+        <%= label_tag "chosen_gender", "Choose a Gender:" %>
+        <%= select_tag "chosen_gender",
+                       options_from_collection_for_select(Professors.read.order("gender"),
+                        "id",
+                        "gender"), "class" => "form-control" %>
+      </div>
+
+
+      <div class="form-group">
+        <%= label_tag "photo_url", "Link to a headshot image" %>
+        <%= text_field_tag "photo_url", "", "class" => "form-control" %>
+      </div>
+
+
+      <div class="form-group">
+        <%= label_tag "chosen_class_id", "Choose a Class:" %>
+        <%= select_tag "chosen_class_id",
+                       options_from_collection_for_select(Classes.read.order("class_name"),
+                        "id",
+                        "class_name"), "class" => "form-control" %>
+      </div>
+
+      <%= submit_tag "Add This Professor", "class" => "btn btn-lg btn-success" %> or <%= link_to "Cancel", "/professors" %>
+
+    </form>
+</div>
+</div>
