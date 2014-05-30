@@ -23,7 +23,7 @@
       <% sections.each do |section| %>
         <% courses = Course.find_by("id" => section["course_id"]) %>
         <li>
-          <%= link_to courses["course_name"], "/courses/#{courses["id"]}" %>
+          <%= link_to courses["course_name"], "/section/#{section["id"]}" %>
 
         </li>
       <% end %>
