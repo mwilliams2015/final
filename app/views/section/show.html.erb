@@ -1,0 +1,76 @@
+<% section_no = params["id"] %>
+<% section = Section.read(section_no) %>
+
+
+<% avg = Rating.where("section_id" => params["id"]).average(:rating).to_i %>
+    <h4>Average Rating:
+      <% avg.times do %>
+        &star;
+      <% end %>
+    </h4>
+
+
+<h2> <font face="verdana" color=purple>Reviews</font> </h2>
+
+<div class="row">
+  <div class="col-md-6">
+<table>
+<style>
+table,th,td
+{
+border:1px solid #C0C0C0;
+border-collapse:collapse
+}
+</style>
+<table style>
+
+<% reviews = Rating.where("section_id" => params["id"]) %>
+  <thead>
+  <tr>
+    <th> Date </th>
+    <th> On a scale of 1-10 (10 being the most likely), how likely would you be to recommend this course to a friend? </th>
+    <th> Feedback </th>
+  </tr>
+  </thead>
+  <tbody>
+
+<% reviews.each do |lion| %>
+
+  <tr>
+    <td><%= "TBD" %></td>
+    <td><%= lion["rating"] %></td>
+    <td><%= lion["feedback"] %></td>
+
+  </tr>
+<% end %>
+</tbody>
+</table>
+</style>
+</table>
+
+<div class="col-md-6">
+  <h1> Class Name </h1>
+  <h3> Professor Name </h3>
+
+  <br>
+
+  <h3>Student Reviews</h3>
+
+    <% if Rating.where("section_id" => params["id"]).count == 0 %>
+      <p>Be the first to add a review!</p>
+    <% end %>
+
+    <%= form_tag "/rating" do %>
+
+      <%= hidden_field_tag "section_id", section["id"] %>
+
+      <div class="form-group">
+        <%= label_tag :rating %>
+        <%= select_tag :rating, options_for_select(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']) %>
+        <%= text_area_tag :content, "", "class" => "form-control", "placeholder" => "Say something profound!", "rows" => 4 %>
+      </div>
+
+      <%= submit_tag "Add Review", "class" => "btn btn-md btn-primary" %>
+    <% end %>
+
+    </div>

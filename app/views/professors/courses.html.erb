@@ -1,5 +1,5 @@
 <% professor_id = params["id"] %>
-<% professor = Professors.read(professor_id) %>
+<% professor = Professor.read(professor_id) %>
 
 <div class="row">
 
@@ -17,22 +17,16 @@
   <div class="col-md-12">
     <h3>Courses Taught:</h3>
 
-<% links = Link.where("prof_id" => professor["id"]) %>
+<% sections = Section.where("professor_id" => professor["id"]) %>
 
     <ul>
-      <% links.each do |link| %>
-        <% classes = Classes.find_by("id" => link["class_id"]) %>
+      <% sections.each do |section| %>
+        <% courses = Course.find_by("id" => section["course_id"]) %>
         <li>
-          <%= link_to classes["class_name"], "/classes/#{classes["id"]}" %>
+          <%= link_to courses["course_name"], "/courses/#{courses["id"]}" %>
 
         </li>
       <% end %>
     </ul>
 
-    <h3>Reviews:</h3>
-    <div class="row">
-    <div class="col-md-2">
-    <%= link_to "Add a New Review", "/rating/new", "class" => 'btn btn-lg btn-primary' %>
-    </div>
-    </div>
 

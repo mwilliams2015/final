@@ -1,0 +1,35 @@
+<h1>Edit User</h1>
+
+<% the_user = User.read(params["id"]) %>
+
+<div class="row">
+  <div class="col-md-5">
+
+    <%= form_tag "/users/#{the_user['id']}", "method" => "patch"  %>
+
+      <div class="form-group">
+        <%= label_tag "username", "Choose a username:" %>
+        <%= text_field_tag "username", the_user["username"], "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "password", "Password" %>
+        <%= text_field_tag "password", the_user["password"], "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "firstname", "What's your first name?" %>
+        <%= text_field_tag "firstname", the_user["firstname"], "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "lastname", "What's your last name?" %>
+        <%= text_field_tag "lastname", the_user["lastname"], "class" => "form-control" %>
+      </div>
+
+
+      <%= submit_tag "Save Changes", "class" => "btn btn-lg btn-success" %> or <%= link_to "Cancel", "/" %>
+
+    </form>
+</div>
+</div>

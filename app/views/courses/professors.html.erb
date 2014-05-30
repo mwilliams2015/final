@@ -1,0 +1,21 @@
+<% course_id = params["id"] %>
+<% course = Course.read(course_id) %>
+<% section = Section.where("course_id" => course["id"]) %>
+
+
+<h3>Choose a professor: </h3>
+
+    <ul>
+
+      <% section.each do |list| %>
+
+      <% professor = Professor.find_by("id" => list["professor_id"]) %>
+
+      <div class="column">
+        <div class="col-md-4">
+         <%= image_tag(professor["photo_url"]) %>
+         <p><h4><%= professor["pfirst_name"] %> <%= link_to professor["plast_name"], "/section/#{list["id"]}" %></h4></p>
+     </div>
+
+      <% end %>
+    </ul>

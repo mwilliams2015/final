@@ -1,0 +1,26 @@
+<% course = Course.find_by("id" => params["id"]) %>
+
+<h1>Edit Course #<%= course["id"] %></h1>
+
+<!-- This won't work!  It will send a GET request instead. -->
+<form action="/classes/<%= course["id"] %>" method="patch">
+
+  <p>
+    <label>What department is the class in?</label>
+    <input type="text" name="dept" value="<%= course["dept"] %>">
+  </p>
+
+  <p>
+    <label>What is the class number?</label>
+    <input type="integer" name="class_no" value="<%= course["course_no"] %>">
+  </p>
+
+  <p>
+    <label>What is the title of the class?</label>
+    <input type="text" name="class_name" value="<%= course["course_name"] %>">
+  </p>
+
+
+  <input type="submit"> or <a href="/classes">Cancel</a>
+
+</form>

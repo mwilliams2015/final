@@ -1,30 +1,28 @@
-Professors:
+Professor:
   - pfirst_name: string
   - plast_name: string
   - gender: boolean
   - photo_url: string
 
-Classes:
+Course:
   - dept: string
-  - class_no: integer
-  - class_name: string
-
-Link:
-  - prof_id: string
-  - class_id: string
+  - course_no: integer
+  - course_name: string
 
 Rating:
-  - class_id: integer
-  - professor_id: integer
-  - quarter: string
+  - section_id: string
   - rating: integer
   - feedback: text
 
-Student:
+Section:
+  - course_id: string
+  - professor_id: string
+
+User:
   - username: string
   - password: string
-  - name: string
-  - graduation_year: integer
+  - firstname: string
+  - lastname: string
 
 
 
