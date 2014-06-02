@@ -16,7 +16,7 @@ border:1px solid #C0C0C0;
 border-collapse:collapse
 }
 </style>
-<table style="width:600px">
+<table style="width:1000px">
 
 <% all_courses = Course.order("dept asc, course_no asc") %>
 <% if params["dept"].present? %>
@@ -41,7 +41,7 @@ border-collapse:collapse
     <td><%= course["dept"] %></td>
     <td><%= course["course_no"] %></td>
     <td><%= link_to name, "/courses/#{course["id"]}" %></td>
-    <td><%= link_to "(Delete)", "/courses/#{course["id"]}", "method" => "delete" %></td>
+    <td><%= link_to "Edit", "/courses/#{course["id"]}/edit"%> | <%= link_to "Delete", "/courses/#{course["id"]}", "method" => "delete" %></td>
 
   </tr>
 <% end %>

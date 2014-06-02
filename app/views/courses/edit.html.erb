@@ -1,0 +1,26 @@
+<% course = Course.find_by("id" => params["id"]) %>
+
+<h2>Edit Course:
+<p><small><%= course["course_name"] %></small></p></h2>
+
+
+<%= form_tag "/courses/#{course["id"]}", "method" => "patch" %>
+
+  <p>
+    <%= label_tag "dept", "What is the department?" %>
+    <%= text_field_tag "dept", course["dept"] %>
+  </p>
+
+   <p>
+    <%= label_tag "course_no", "What is the course number?" %>
+    <%= text_field_tag "course_no", course["course_no"] %>
+  </p>
+
+  <p>
+    <%= label_tag "course_name", "What is the course name?" %>
+    <%= text_field_tag "course_name", course["course_name"] %>
+  </p>
+
+  <%= submit_tag %> or <%= link_to "Cancel", "/courses" %>
+
+</form>
