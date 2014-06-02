@@ -8,4 +8,10 @@ def create
     redirect_to "/courses"
   end
 
+def destroy
+    course = Course.find_by("id" => params["id"])
+    course.delete
+    redirect_to "/courses"
+  end
+
 end

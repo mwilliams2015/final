@@ -18,9 +18,9 @@ border-collapse:collapse
 </style>
 <table style="width:600px">
 
-<% all_classes = Course.order("dept asc, course_no asc") %>
+<% all_courses = Course.order("dept asc, course_no asc") %>
 <% if params["dept"].present? %>
-<%   all_classes = Course.where("dept" => params["dept"]).order("course_no asc") %>
+<%   all_courses = Course.where("dept" => params["dept"]).order("course_no asc") %>
 <% end %>
 
 
@@ -29,17 +29,19 @@ border-collapse:collapse
     <th> Department </th>
     <th> Class Number </th>
     <th> Class name </th>
+    <th> Action </th>
   </tr>
   </thead>
   <tbody>
 
-<% all_classes.each do |zebra| %>
+<% all_courses.each do |course| %>
 
   <tr>
-    <% name = zebra["course_name"] %>
-    <td><%= zebra["dept"] %></td>
-    <td><%= zebra["course_no"] %></td>
-    <td><%= link_to name, "/courses/#{zebra["id"]}" %></td>
+    <% name = course["course_name"] %>
+    <td><%= course["dept"] %></td>
+    <td><%= course["course_no"] %></td>
+    <td><%= link_to name, "/courses/#{course["id"]}" %></td>
+    <td><%= link_to "(Delete)", "/courses/#{course["id"]}", "method" => "delete" %></td>
 
   </tr>
 <% end %>
