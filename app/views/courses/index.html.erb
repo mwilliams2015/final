@@ -4,19 +4,16 @@
   </div>
 </div>
 
-<h2> <font face="arial" color=purple>Choose a Class:</font> </h2>
+<h1> <strong>Choose a Class:</font> </strong> </h1>
 
 </div>
 
 <table>
 <style>
 table,th,td
-{
-border:1px solid #C0C0C0;
-border-collapse:collapse
-}
+
 </style>
-<table style="width:1000px">
+<table >
 
 <% all_courses = Course.order("dept asc, course_no asc") %>
 <% if params["dept"].present? %>
@@ -26,10 +23,14 @@ border-collapse:collapse
 
   <thead>
   <tr>
-    <th> Department </th>
-    <th> Class Number </th>
-    <th> Class name </th>
-    <th> Action </th>
+    <th style="border:1px solid black;
+border-collapse:collapse; padding:15px"> Department </th>
+    <th style="border:1px solid black;
+border-collapse:collapse; padding:15px"> Class Number </th>
+    <th style="border:1px solid black;
+border-collapse:collapse; padding:15px"> Class name </th>
+    <th style="border:1px solid black;
+border-collapse:collapse; padding:15px"> Action </th>
   </tr>
   </thead>
   <tbody>
@@ -38,10 +39,14 @@ border-collapse:collapse
 
   <tr>
     <% name = course["course_name"] %>
-    <td><%= course["dept"] %></td>
-    <td><%= course["course_no"] %></td>
-    <td><%= link_to name, "/courses/#{course["id"]}" %></td>
-    <td><%= link_to "Edit", "/courses/#{course["id"]}/edit"%> | <%= link_to "Delete", "/courses/#{course["id"]}", "method" => "delete" %></td>
+    <td style="border:1px solid black;
+border-collapse:collapse; padding:5px"><%= course["dept"] %></td>
+    <td style="border:1px solid black;
+border-collapse:collapse; padding:5px"><%= course["course_no"] %></td>
+    <td style="border:1px solid black;
+border-collapse:collapse; padding:5px"><%= link_to name, "/courses/#{course["id"]}" %></td>
+    <td style="border:1px solid black;
+border-collapse:collapse; padding:5px"><%= link_to "Edit", "/courses/#{course["id"]}/edit"%> | <%= link_to "Delete", "/courses/#{course["id"]}", "method" => "delete" %></td>
 
   </tr>
 <% end %>
