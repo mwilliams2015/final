@@ -27,7 +27,7 @@ Final::Application.routes.draw do
   # --- Delete
   delete "/courses/:id" => 'courses#destroy'
 
-
+  # Resource: Sections
   get "/sections/:id" => "sections#show"
 
   # Resource: Ratings
