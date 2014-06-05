@@ -5,9 +5,20 @@ Final::Application.routes.draw do
 
   # Resource: Professors
 
+# --- Create
+  get "/professors/new" => 'professors#new'
+  post "/professors" => 'professors#create'
+
   # --- Read
   get "/professors" => 'professors#index'
   get "/professors/:id" => 'professors#courses'
+
+  # -- Update
+  get "/professors/:id/edit" => 'professors#edit'
+  patch "/professors/:id" => 'professors#update'
+
+  # --- Delete
+  delete "/professors/:id" => 'professors#destroy'
 
 
 # Resource: Courses

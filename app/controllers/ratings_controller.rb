@@ -6,7 +6,6 @@ def create
                   "rating" => params["rating"],
                   "feedback" => params["feedback"])
     redirect_to "/sections/#{params["section_id"]}", :notice => "Thanks for your review!"
-
   end
 
 

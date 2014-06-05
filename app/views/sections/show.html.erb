@@ -34,7 +34,7 @@
       <div class="form-group">
         <%= label_tag :rating %>
         <%= select_tag :rating, options_for_select(['5 stars','4 stars','3 stars','2 stars','1 star']) %>
-        <%= text_area_tag :feedback, "", "class" => "form-control", "placeholder" => "Say something profound!", "rows" => 4 %>
+        <%= text_area_tag :feedback, "", "class" => "form-control", "placeholder" => "What did you think?", "rows" => 4 %>
       </div>
 
       <%= submit_tag "Add Review", "class" => "btn btn-md btn-primary" %>
@@ -47,7 +47,7 @@
         <div class="col-md-3">
           <p class="lead"><%= rating.rating %> stars out of 5</p>
           <% if the_user.present? %>
-            <p>by <%= the_user["username"] %></p>
+            <p>Reviewed by: <%= the_user["username"] %></p>
           <% end %>
         </div>
         <div class="col-md-9">

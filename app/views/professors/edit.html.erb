@@ -1,0 +1,31 @@
+<% professor = Professor.find_by("id" => params["id"]) %>
+
+<h2>Edit Professor:
+<p><small><%= professor["pfirst_name"] %> <%= professor["plast_name"] %></small></p></h2>
+
+
+<%= form_tag "/professors/#{professor["id"]}", "method" => "patch" %>
+
+  <p>
+    <%= label_tag "pfirst_name", "What is the professor's first name?" %>
+    <%= text_field_tag "pfirst_name", professor["pfirst_name"] %>
+  </p>
+
+   <p>
+    <%= label_tag "plast_name", "What is the professor's last name?" %>
+    <%= text_field_tag "plast_name", professor["plast_name"] %>
+  </p>
+
+  <p>
+    <%= label_tag "gender", "What is the professor's gender?" %>
+    <%= text_field_tag "gender", professor["gender"] %>
+  </p>
+
+  <p>
+    <%= label_tag "photo_url", "Do you have a photo url for this professor?" %>
+    <%= text_field_tag "photo_url", professor["photo_url"] %>
+  </p>
+
+  <%= submit_tag %> or <%= link_to "Cancel", "/professors" %>
+
+</form>

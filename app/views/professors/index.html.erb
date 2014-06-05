@@ -1,4 +1,10 @@
 <div class="row">
+  <div class="col-md-2 col-md-offset-10">
+    <%= link_to "Add a New Professor", "/professors/new", "class" => 'btn btn-lg btn-primary' %>
+  </div>
+</div>
+
+<div class="row">
 
 </div>
 
@@ -16,6 +22,7 @@
 
         <div class="col-md-8">
           <h3> <%= professor["pfirst_name"] %> <%= link_to professor["plast_name"], "/professors/#{professor["id"]}" %> </h3>
+          </h3> <%= link_to "edit", "/professors/#{professor["id"]}/edit" %> | <%= link_to "delete", "/professors/#{professor["id"]}", "method" => "delete" %>
 
 
     </div>

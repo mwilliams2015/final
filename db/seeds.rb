@@ -672,7 +672,7 @@ finc430braun = Section.create("course_id" => finc430.id, "professor_id" => phill
 mgmt431garthwaite = Section.create("course_id" => mgmt431.id, "professor_id" => craiggarthwaite.id)
 hema914calkins = Section.create("course_id" => hema914.id, "professor_id" => timothycalkins.id)
 
-User.delete.all
+User.delete_all
 mollyw = User.create("username" => "mollyw", "password" => "password", "firstname" => "Molly", "lastname" => "Williams")
 williams = User.create("username" => "williams", "password" => "password", "firstname" => "Molly", "lastname" => "Williams")
 
