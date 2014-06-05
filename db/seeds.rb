@@ -672,9 +672,12 @@ finc430braun = Section.create("course_id" => finc430.id, "professor_id" => phill
 mgmt431garthwaite = Section.create("course_id" => mgmt431.id, "professor_id" => craiggarthwaite.id)
 hema914calkins = Section.create("course_id" => hema914.id, "professor_id" => timothycalkins.id)
 
+User.delete.all
+mollyw = User.create("username" => "mollyw", "password" => "password", "firstname" => "Molly", "lastname" => "Williams")
 
 Rating.delete_all
-Rating.create("section_id" => finc430chopra.id, "rating" => "4", "feedback" => "Great!")
-Rating.create("section_id" => mgmt431garthwaite.id, "rating" => "6", "feedback" => "Perfect!")
-Rating.create("section_id" => hema914calkins.id, "rating" => "8", "feedback" => "the best!")
-Rating.create("section_id" => hema914calkins.id, "rating" => "3", "feedback" => "Awesome!")
+Rating.create("section_id" => finc430chopra["id"], "user_id" => mollyw["id"], "rating" => "4", "feedback" => "Great!")
+Rating.create("section_id" => mgmt431garthwaite["id"], "user_id" => mollyw["id"], "rating" => "5", "feedback" => "Perfect!")
+Rating.create("section_id" => hema914calkins["id"], "user_id" => mollyw["id"], "rating" => "2", "feedback" => "the best!")
+Rating.create("section_id" => hema914calkins["id"], "user_id" => mollyw["id"], "rating" => "3", "feedback" => "Awesome!")
+
