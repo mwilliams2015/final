@@ -1,7 +1,7 @@
 Final::Application.routes.draw do
 
  # Specify a custom home page
-   get "/" => "courses#index"
+   get "/" => "home#show"
 
   # Resource: Professors
 

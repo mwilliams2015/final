@@ -24,6 +24,7 @@ Rating:
   - user_id: integer
   - rating: integer
   - feedback: text
+  - date: datetime
 
 
 

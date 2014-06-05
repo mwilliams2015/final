@@ -13,7 +13,7 @@
 
       <div class="column">
         <div class="col-md-4">
-         <%= image_tag(professor["photo_url"]) %>
+         <%= image_tag(professor["photo_url"], "height" => 250, "width" => 200) %>
          <p><h4><%= professor["pfirst_name"] %> <%= link_to professor["plast_name"], "/sections/#{list["id"]}" %></h4></p>
      </div>
 

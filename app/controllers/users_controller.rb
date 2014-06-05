@@ -34,7 +34,7 @@ class UsersController < ApplicationController
                   "password" => params["password"],
                   "firstname" => params["firstname"],
                   "lastname" => params["lastname"])
-    redirect_to '/users/#{the_user["id"]}'
+    redirect_to "/users/#{the_user["id"]}"
   end
 
 end

@@ -8,8 +8,8 @@
     <%= form_tag "/courses", "method" => "post"  %>
 
        <div class="form-group">
-        <%= label_tag "dept", "What is the department?" %>
-        <%= text_field_tag "dept", "", "class" => "form-control" %>
+        <%= label_tag "dept", "What department is the class in?" %>
+        <%= select_tag :dept, options_for_select(['ACCT', 'BLAW', 'DECS', 'FINC', 'HEMA', 'INTL', 'KIEI', 'KPPI', 'MECN','MEDM','MGMT','MKTG','MORS','OPNS','REAL',]) %>
       </div>
 
       <div class="form-group">

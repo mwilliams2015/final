@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Final</title>
+  <title>Rate Your Professor</title>
 
   <%= stylesheet_link_tag    "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -23,11 +23,11 @@
             <%= link_to "Home", "/", "class" => "item-link"  %> |
             <%= link_to "Search by Course", "/courses" %> |
             <%= link_to "Search by Professor", "/professors" %>
-          </div>
+            </div>
           <div class="pull-right">
             <% user = User.find_by("id" => cookies["user_id"]) %>
             <% if user.present? %>
-              Hi <%= user["username"] %>!
+              <strong>Hi, <%= user["firstname"] %>!</strong>
               <%= link_to "My Profile", "/users/#{user["id"]}" %> |
               <%= link_to "Sign Out", '/logout' %>
             <% else %>
@@ -36,6 +36,8 @@
             <% end %>
         </div>
         <hr>
+        <h4 class="text-primary"><%= notice %></h4>
+
 
       <%= yield %>
 

@@ -1,11 +1,11 @@
-<h1>Edit User</h1>
+<h1>Edit Profile:</h1>
 
 <% the_user = User.read(params["id"]) %>
 
 <div class="row">
   <div class="col-md-5">
 
-    <%= form_tag "/users/#{the_user['id']}", "method" => "patch"  %>
+    <%= form_tag "/users/#{the_user["id"]}", "method" => "patch"  %>
 
       <div class="form-group">
         <%= label_tag "username", "Choose a username:" %>
