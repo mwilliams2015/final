@@ -13,7 +13,7 @@
 
   <div class="col-md-8">
     <h1><%= course["course_name"] %>
-      <small>Professor: <%= professor["pfirst_name"] %> <%= professor["plast_name"] %></small>
+      <p><small>Professor: <%= professor["pfirst_name"] %> <%= professor["plast_name"] %></small></p>
     </h1>
     <% avg = Rating.where("section_id" => params["id"]).average(:rating).to_i %>
     <h4>Avg Rating:
@@ -31,7 +31,7 @@
     <%= form_tag "/ratings" do %>
 
       <%= hidden_field_tag "section_id", section["id"] %>
-      <%= hidden_field_tag "date", review["date"] %>
+
 
       <div class="form-group">
         <%= label_tag :rating %>
