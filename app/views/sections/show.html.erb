@@ -50,7 +50,7 @@
       <div class="rating row">
         <div class="col-md-3">
           <p class="lead"><%= rating.rating %> thumbs up out of 5</p>
-          <p>Date added: <%= rating["date"] %>
+          <p>Date added: <%= rating["date"].strftime('%x') %>
           <% if the_user.present? %>
             <p>Reviewed by: <%= the_user["username"] %></p>
           <% end %>

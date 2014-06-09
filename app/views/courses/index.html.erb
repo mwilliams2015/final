@@ -1,17 +1,18 @@
 <div class="row">
   <div class="col-md-10">
 <% departments = Course.pluck("dept").uniq %>
-<% departments.each do |tiger| %>
-<%= link_to tiger, "/courses?dept=#{tiger}"  %> |
+<% departments.each do |dept| %>
+<strong><%= link_to dept, "/courses?dept=#{dept}"  %> | </strong>
 
 <% end %>
 
 
-<div class="row">
-  <div class="col-md-2 col-md-offset-10">
+  <div class="row">
+    <div class="col-md-2 col-md-offset-12">
     <%= link_to "Add a New Course", "/courses/new", "class" => 'btn btn-lg btn-primary' %>
+    </div>
   </div>
-</div>
+
 
 <h1> <strong>Choose a Course:</font> </strong> </h1>
 
