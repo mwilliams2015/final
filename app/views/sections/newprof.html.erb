@@ -1,0 +1,23 @@
+<div class="page-header">
+  <h1>Add a New Section: </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-5">
+
+    <%= form_tag "/sections/newprof", "method" => "post"  %>
+
+      <%= hidden_field_tag "course_id", params["id"] %>
+
+      <div class="form-group">
+        <%= label_tag "chosen_professor_id", "Select Professor Last Name:" %>
+        <%= select_tag "chosen_professor_id", options_from_collection_for_select(Professor.read.order("plast_name"),
+                        "id",
+                        "plast_name"), "class" => "form-control" %>
+      </div>
+
+      <%= submit_tag "Add This Section", "class" => "btn btn-lg btn-success" %> or <%= link_to "Cancel", "/courses" %>
+
+    </form>
+</div>
+</div>

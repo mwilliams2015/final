@@ -1,13 +1,10 @@
 class SectionsController < ApplicationController
 
-  def create
-    Movie.create("title" => params["title"],
-                 "year" => params["year"],
-                 "poster_url" => params["url"],
-                 "director_id" => params["chosen_director_id"]
-                 )
+   def create
 
-    redirect_to "/movies"
+    Section.create("course_id" => params["course_id"], "professor_id" => params["chosen_professor_id"])
+    redirect_to "/courses/#{params["id"]}", :notice => "Thanks for your addition!"
+
   end
 
 end

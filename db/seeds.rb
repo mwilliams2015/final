@@ -423,7 +423,7 @@ wuqinlin = Professor.create("pfirst_name" => "Wuqin", "plast_name" => "Lin", "ge
 brianlucas = Professor.create("pfirst_name" => "Brian", "plast_name" => "Lucas", "gender" => "Male", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/Lucas_Brian.ashx")
 matthewlyle = Professor.create("pfirst_name" => "Matthew", "plast_name" => "Lyle", "gender" => "Male", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/Lyle_Matthew.ashx")
 thomaslys = Professor.create("pfirst_name" => "Thomas", "plast_name" => "Lys", "gender" => "Male", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/lys_t.ashx")
-robertmcgee = Professor.create("pfirst_name" => "Robert", "plast_name" => "Mcgee", "gender" => "Male", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/magee_r.ashx")
+robertmcgee = Professor.create("pfirst_name" => "Robert", "plast_name" => "McGee", "gender" => "Male", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/magee_r.ashx")
 michalmaimaran = Professor.create("pfirst_name" => "Michal", "plast_name" => "Maimaran", "gender" => "Female", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/Maimaran_Michal_2012.ashx")
 cesaremainardi = Professor.create("pfirst_name" => "Cesare", "plast_name" => "Mainardi", "gender" => "Male", "photo_url" => "http://www.kellogg.northwestern.edu/kwo/win11/images/mainardi.jpg")
 eyalmaoz = Professor.create("pfirst_name" => "Eyal", "plast_name" => "Maoz", "gender" => "Male", "photo_url" => "http://www.kellogg.northwestern.edu/~/media/Images/faculty/headshot/maoz_e.ashx")

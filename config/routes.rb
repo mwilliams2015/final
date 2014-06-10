@@ -40,10 +40,14 @@ Final::Application.routes.draw do
 
 # Resource: Sections
   # --- Create
-  get "/sections/new" => 'sections#new'
-  post "/sections" => 'sections#create'
+  get "/sections/newprof" => 'sections#newprof'
+  post "/sections/newprof" => 'sections#create'
 
   get "/sections/:id" => "sections#show"
+
+    # --- Create
+  get "/sections/newcourse" => 'sections#newcourse'
+  post "/sections" => 'sections#create'
 
   # Resource: Ratings
 
