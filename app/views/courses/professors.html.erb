@@ -3,7 +3,7 @@
 <% sections = Section.where("course_id" => course["id"]) %>
 
 
-<h3>Choose a professor: </h3>
+<h3>Choose a Professor: </h3>
 
     <ul>
 
@@ -15,13 +15,15 @@
         <div class="col-md-4">
          <%= image_tag(professor["photo_url"], "height" => 250, "width" => 200) %>
          <p><h4><%= professor["pfirst_name"] %> <%= link_to professor["plast_name"], "/sections/#{section["id"]}" %></h4></p>
-     </div>
-
+        </div>
+      </div>
       <% end %>
+
     </ul>
 
-<div class="row">
-  <div class="col-md-5">
-    <%= link_to "Don't See Your Professor? Add a New Section", "/sections/newprof", "class" => 'btn btn-lg btn-primary' %>
+
+  <div class="row">
+    <div class="col-md-5">
+      <%= link_to "Don't See Your Professor? Add a New Section", "/sections/newprof", "class" => 'btn btn-lg btn-primary' %>
+      </div>
     </div>
-  </div>

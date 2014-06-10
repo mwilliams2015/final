@@ -9,7 +9,7 @@
 
       <div class="form-group">
         <%= label_tag "dept", "What department is the class in?" %>
-        <%= select_tag "dept", options_from_collection_for_select(Course.read.order("dept").uniq, "id", "dept"),"class" => "form-control" %>
+        <%= select_tag "dept", options_from_collection_for_select(Course.select("dept").uniq, "id", "dept"),"class" => "form-control" %>
       </div>
 
       <div class="form-group">

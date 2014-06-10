@@ -1,7 +1,7 @@
 Final::Application.routes.draw do
 
  # Specify a custom home page
-   get "/" => "home#show"
+  get "/" => "home#show"
 
   # Resource: Professors
 
@@ -40,14 +40,12 @@ Final::Application.routes.draw do
 
 # Resource: Sections
   # --- Create
-  get "/sections/newprof" => 'sections#newprof'
-  post "/sections/newprof" => 'sections#create'
-
   get "/sections/:id" => "sections#show"
-
-    # --- Create
-  get "/sections/newcourse" => 'sections#newcourse'
   post "/sections" => 'sections#create'
+
+  get "/sections/newprof" => 'sections#newprof'
+  post "/sections/newprofessor" => 'sections#create'
+
 
   # Resource: Ratings
 
@@ -66,8 +64,7 @@ Final::Application.routes.draw do
   # --- Delete
   delete "/ratings/:id" => 'ratings#destroy'
 
-
-  # --- Create
+   # --- Create
   get "/users/new" => 'users#new'
   post "/users" => 'users#create'
 
@@ -83,7 +80,7 @@ Final::Application.routes.draw do
   delete "/users/:id" => 'users#destroy'
 
 
-  # Sign-In and Sign-Out
+  # --- Sign-In and Sign-Out
 
   get "/logout" => 'sessions#logout'
   get "/login" => 'sessions#login'

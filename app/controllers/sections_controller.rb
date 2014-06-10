@@ -1,9 +1,10 @@
 class SectionsController < ApplicationController
 
-   def create
+  def create
 
-    Section.create("course_id" => params["course_id"], "professor_id" => params["chosen_professor_id"])
-    redirect_to "/courses/#{params["id"]}", :notice => "Thanks for your addition!"
+    Section.create("course_id" => params["course_id"],
+                   "professor_id" => params["chosen_professor_id"])
+    redirect_to "/courses", :notice => "Thanks for your addition!"
 
   end
 
