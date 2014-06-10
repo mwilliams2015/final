@@ -1,5 +1,9 @@
+<% course_id = params["id"] %>
+<% course = Course.read(course_id) %>
+
 <div class="page-header">
-  <h1>Add a New Section: </h1>
+  <h2>Add a New Section: </h2>
+  <h4> Course: <small><%= course["course_name"] %></small></h4>
 </div>
 
 <div class="row">

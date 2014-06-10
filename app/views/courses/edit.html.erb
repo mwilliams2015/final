@@ -6,20 +6,20 @@
 
 <%= form_tag "/courses/#{course["id"]}", "method" => "patch" %>
 
-  <p>
+  <div>
     <%= label_tag "dept", "What is the department?" %>
     <%= text_field_tag "dept", course["dept"] %>
-  </p>
+  </div>
 
-   <p>
+   <div>
     <%= label_tag "course_no", "What is the course number?" %>
     <%= text_field_tag "course_no", course["course_no"] %>
-  </p>
+  </div>
 
-  <p>
+  <div>
     <%= label_tag "course_name", "What is the course name?" %>
     <%= text_field_tag "course_name", course["course_name"] %>
-  </p>
+  </div>
 
   <%= submit_tag %> or <%= link_to "Cancel", "/courses" %>
 

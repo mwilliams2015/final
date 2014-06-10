@@ -2,8 +2,14 @@
 <% course = Course.read(course_id) %>
 <% sections = Section.where("course_id" => course["id"]) %>
 
+<div class="row">
+    <div class="col-md-5 col-md-offset-7">
+      <%= link_to "Don't See Your Professor? Add a New Section", "/sections/#{course["id"]}/newprof", "class" => 'btn btn-lg btn-primary' %>
+      </div>
+    </div>
 
-<h3>Choose a Professor: </h3>
+
+<h2>Choose a Professor: </h2>
 
     <ul>
 
@@ -22,8 +28,4 @@
     </ul>
 
 
-  <div class="row">
-    <div class="col-md-5">
-      <%= link_to "Don't See Your Professor? Add a New Section", "/sections/new", "class" => 'btn btn-lg btn-primary' %>
-      </div>
-    </div>
+
